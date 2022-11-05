@@ -16,6 +16,7 @@ function playRound(){
     getComputerChoice();
     caseSensitive();
     console.log(`You chose ${playerSelection} and computer chose ${computerSelection}`);
+    // These are the WIN conditions:
 
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
         return console.log(`YOU WIN! ${playerSelection} beats ${computerSelection}!`)
@@ -24,7 +25,8 @@ function playRound(){
     }   else if (playerSelection === "Paper" && computerSelection === "Rock"){
         return console.log(`YOU WIN! ${playerSelection} beats ${computerSelection}!`)
     }
-
+    // These are the LOSE conditions:
+    
     if (playerSelection === "Rock" && computerSelection === "Paper"){
         return console.log(`YOU LOSE! ${computerSelection} beats ${playerSelection}!`)
     }   else if (playerSelection === "Paper" && computerSelection === "Scissors"){
