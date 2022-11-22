@@ -6,6 +6,15 @@ let playerSelection = "";
 let playerScore = 0;
 let computerScore = 0;
 
+//LISTENERS
+const rock = document.getElementById("Rock");
+rock.addEventListener("click", selectRock = function(){playerSelection = "Rock"; playRound();})
+
+const paper = document.getElementById("Paper");
+paper.addEventListener("click", selectPaper = function(){playerSelection = "Paper"; playRound();})
+
+const scissors = document.getElementById("Scissors");
+scissors.addEventListener("click", selectScissors = function(){playerSelection = "Scissors"; playRound();})
 // FUNCTIONS
 
 function getComputerChoice(){
@@ -14,10 +23,10 @@ function getComputerChoice(){
 
 function playRound(){
     
-    playerSelection = prompt("Choose: Rock, Paper or Scissors");
+    // playerSelection = rock;
     getComputerChoice();
-    caseSensitive();
-    console.log(`You chose ${playerSelection} and computer chose ${computerSelection}`);
+    // caseSensitive();
+    // console.log(`You chose ${playerSelection} and computer chose ${computerSelection}`);
     // These are the WIN conditions:
 
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
@@ -56,18 +65,18 @@ function caseSensitive() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    // for (let i = 0; i < 5; i++) {
         playRound();
-    }
-    if (playerScore > computerScore){
-        return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> YOU WIN!`);
-    } else if (computerScore > playerScore) {
-        return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> YOU LOSE!`);
-    } else if (computerScore === playerScore) {
-        return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> TIE GAME!`);
-    }
+    // }
+    // if (playerScore > computerScore){
+    //     return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> YOU WIN!`);
+    // } else if (computerScore > playerScore) {
+    //     return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> YOU LOSE!`);
+    // } else if (computerScore === playerScore) {
+    //     return console.log(`GAME OVER! ${playerScore} -VS- ${computerScore} >> TIE GAME!`);
+    // }
 }
-// CALLS
+//CALLS
 
 game();
 
