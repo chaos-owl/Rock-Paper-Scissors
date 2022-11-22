@@ -6,6 +6,16 @@ let playerSelection = "";
 let playerScore = 0;
 let computerScore = 0;
 
+//DOM SELECTS
+
+const resultsContainer = document.querySelector("#results");
+const showResults = document.createElement("p");
+showResults.classList.add("showResults");
+showResults.textContent = "";
+
+resultsContainer.appendChild(showResults);
+
+
 //LISTENERS
 const rock = document.getElementById("Rock");
 rock.addEventListener("click", selectRock = function(){playerSelection = "Rock"; playRound();})
@@ -31,29 +41,29 @@ function playRound(){
 
     if (playerSelection === "Rock" && computerSelection === "Scissors"){
         playerScore ++;
-        return console.log(`YOU WIN! ${playerSelection} beats ${computerSelection}!`)
+        return showResults.textContent = `YOU WIN! ${playerSelection} beats ${computerSelection}!`;
     }   else if (playerSelection === "Scissors" && computerSelection === "Paper"){
         playerScore ++;
-        return console.log(`YOU WIN! ${playerSelection} beats ${computerSelection}!`)
+        return showResults.textContent = `YOU WIN! ${playerSelection} beats ${computerSelection}!`;
     }   else if (playerSelection === "Paper" && computerSelection === "Rock"){
         playerScore ++;
-        return console.log(`YOU WIN! ${playerSelection} beats ${computerSelection}!`)
+        return showResults.textContent = `YOU WIN! ${playerSelection} beats ${computerSelection}!`;
     }
     // These are the LOSE conditions:
 
     if (playerSelection === "Rock" && computerSelection === "Paper"){
         computerScore ++;
-        return console.log(`YOU LOSE! ${computerSelection} beats ${playerSelection}!`)
+        return showResults.textContent = `YOU LOSE! ${computerSelection} beats ${playerSelection}!`;
     }   else if (playerSelection === "Paper" && computerSelection === "Scissors"){
         computerScore ++;
-        return console.log(`YOU LOSE! ${computerSelection} beats ${playerSelection}!`)
+        return showResults.textContent = `YOU LOSE! ${computerSelection} beats ${playerSelection}!`;
     }   else if (playerSelection === "Scissors" && computerSelection === "Rock"){
         computerScore ++;
-        return console.log(`YOU LOSE! ${computerSelection} beats ${playerSelection}!`)
+        return showResults.textContent = `YOU LOSE! ${computerSelection} beats ${playerSelection}!`;
     }
 
     if (playerSelection === computerSelection) {
-        return (console.log("TIE!"));
+        return showResults.textContent = "TIE!";
     }
      
 }
